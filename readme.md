@@ -7,7 +7,7 @@ That is a web3 platform in which people can exchange their tokens and collect re
 ---
 
 > [!NOTE]
-> Program ID: `9HP45DvSvMRNmb7KQTDnujtv49oDVNEEH8VCFTmdb5yf ` program is live on devnet.
+> Program ID: `45C1bSkFCbjrqiQHqm8oS6J88jirW8rC46Qiu6TvoY6x ` program is live on devnet.
 
 > [!IMPORTANT] > `Helius` RPC Nodes are used in that platform for better performance.
 

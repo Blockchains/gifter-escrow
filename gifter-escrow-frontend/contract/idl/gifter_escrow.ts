@@ -1,5 +1,5 @@
 export type GifterEscrow = {
-  address: '9HP45DvSvMRNmb7KQTDnujtv49oDVNEEH8VCFTmdb5yf';
+  address: '45C1bSkFCbjrqiQHqm8oS6J88jirW8rC46Qiu6TvoY6x';
   metadata: {
     name: 'gifterEscrow';
     version: '0.1.0';
@@ -738,7 +738,7 @@ export type GifterEscrow = {
 };
 
 export const IDL: GifterEscrow = {
-  address: '9HP45DvSvMRNmb7KQTDnujtv49oDVNEEH8VCFTmdb5yf',
+  address: '45C1bSkFCbjrqiQHqm8oS6J88jirW8rC46Qiu6TvoY6x',
   metadata: {
     name: 'gifterEscrow',
     version: '0.1.0',
