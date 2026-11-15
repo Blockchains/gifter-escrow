@@ -79,7 +79,7 @@ impl<'info> Take<'info> {
 
         let cpi_context = CpiContext::new(self.token_program.to_account_info(), accounts);
         
-        transfer_checked(cpi_context, self.gifter_escrow_state.maker_expected_price, self.mint_b.decimals)?;
+        transfer_checked(cpi_context, self.gifter_escrow_state.maker_expected_price.saturating_sub(1), self.mint_b.decimals)?;
 
         Ok(())
     }
