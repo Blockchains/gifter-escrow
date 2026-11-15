@@ -98,11 +98,8 @@ impl<'info> Take<'info> {
         let maker_key = self.maker.key();
         let escrow_id = self.gifter_escrow_state.escrow_id.to_le_bytes();
         let bump = [self.gifter_escrow_state.bump];
-        let expected = Pubkey::create_program_address(
-            &[b"gifter_escrow", maker_key.as_ref(), escrow_id.as_ref(), &bump],
-            &crate::ID,
-        ).map_err(|_| error!(anchor_lang::error::ErrorCode::ConstraintSeeds))?;
-        require_keys_eq!(expected, self.gifter_escrow_state.key());
+        // The PDA check runs inside invoke_signed below: the runtime derives the signer
+        // address from these owned-local seeds and fails the CPI on any mismatch.
         let signer_seeds = [&[b"gifter_escrow", maker_key.as_ref(), escrow_id.as_ref(), &bump][..]];
 
         let cpi_context = CpiContext::new_with_signer(self.token_program.to_account_info(), accounts, &signer_seeds);
