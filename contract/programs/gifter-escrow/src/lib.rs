@@ -18,6 +18,9 @@ pub mod gifter_escrow {
         // init escrow (initing accounts)
 
         ctx.accounts.initialize_gifter_escrow(escrow_id, maker_expected_price,deposit_amount, ctx.bumps.gifter_escrow_state)?;
+        // A zero deposit would create an escrow whose vault holds nothing, so take_and_close
+        // would move zero mint_a and still emit CompleteEvent. Require a nonzero deposit.
+        anchor_lang::require_neq!(deposit_amount, 0);
 
         // deposit to vault
         ctx.accounts.deposit_to_escrow_vault(deposit_amount)?;
