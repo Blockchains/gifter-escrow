@@ -34,3 +34,10 @@ pub struct CompleteEvent{
 
 
 
+
+#[error_code]
+pub enum GifterEscrowError {
+    #[msg("escrow vault must be empty when the escrow is created")]
+    VaultNotEmpty,
+}
+
